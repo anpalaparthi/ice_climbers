@@ -1,7 +1,6 @@
 Setup instructions (installations)
 ## Frontend React
 - npx create-react-app .
-- (i had to do this) npm install
 - (i had to do this) create .env and add SKIP_PREFLIGHT_CHECK=true
 
 ## Backend MongoDB/Express
