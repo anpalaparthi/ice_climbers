@@ -1,10 +1,10 @@
 Setup instructions (installations)
-** Frontend React **
+## Frontend React
 - npx create-react-app .
 - (i had to do this) npm install
 - (i had to do this) create .env and add SKIP_PREFLIGHT_CHECK=true
 
-** Backend MongoDB/Express **
+## Backend MongoDB/Express
 - cd server/
 - npm init -y
 - npm install express cors mongoose dotenv
