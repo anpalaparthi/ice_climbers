@@ -1,12 +1,15 @@
 Setup instructions (installations)
+## Frontend React
 - npx create-react-app .
+- (i had to do this) create .env and add SKIP_PREFLIGHT_CHECK=true
+
+## Backend MongoDB/Express
 - cd server/
 - npm init -y
 - npm install express cors mongoose dotenv
 - npm install -g nodemon
 - in JSON file under server/, "start": "node server.js", "devStart": "nodemon server.js"
 - make new .env in server/ and add DATABASE_URL=mongodb://localhost/ice_climbers_db
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
