@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import HelloWorldText from "./components/HelloWorldText";
@@ -25,6 +26,7 @@ function App() {
             <Route path='/potato' exact component={HelloWorldText}/>
         </Router>
     );
+
 }
 
 export default App;

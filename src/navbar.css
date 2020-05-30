@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Patua%20One");
+
+
+.tab {
+	font-family: Montserrat;
+	padding-top: 2vw;
+	transition-duration: 0.7s;
+	width: 20vw;
+	height: 150%;
+}
+.tab:hover {
+	background-color: #F4A261;
+	transition-duration: 0.7s;
+}
+
+/*
+	COLOR SCHEME:
+
+	#264653 -> dark green (charcoal)
+	#2A9D8F -> medium green (persian green)
+	#E9C46A -> yellow (maize crayola)
+	#F4A261 -> rusty orange (sandy brown)
+	#E76F51 -> reddish orange (terra cotta)
+*/
