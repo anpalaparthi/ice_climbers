@@ -1,0 +1,24 @@
+.loginForm {
+	border: 3px solid black;
+	padding: 2vh 2vw 2vh 3vw;
+	margin: -29vh 0 0 28vw;
+	width: 100%;
+}
+label {
+	font-size: 1em;
+	font-family: Chelsea Market;
+}
+input[type*=submit] {
+	background-color: #F4A261;
+	border: none;
+	font-family: Chelsea Market;
+	/*margin: auto;*/
+	width: 95%;
+}
+input[type*=submit]:hover {
+	background-color: #E76F51;
+}
+.registerLink {
+	font-size: 1em;
+	font-family: Montserrat;
+}

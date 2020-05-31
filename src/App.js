@@ -9,20 +9,29 @@ import Plan from "./components/plan.component";
 import Timer from "./components/timer.component";
 import Track from "./components/track.component";
 import Calendar from "./components/calendar.component";
+import Register from "./components/register.component";
 
-function App() {
-  return (
-  	<Router>
-    	<Navbar />
-    	<br/>
-    	<Route path="/" exact component={Home} />
-    	<Route path="/login" component={Login} />
-    	<Route path="/plan" component={Plan} />
-    	<Route path="/timer" component={Timer} />
-    	<Route path="/track" component={Track} />
-      <Route path="/calendar" component={Calendar} />
-    </Router>
-  );
+export default class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			openLogin: true,
+			openRegister: false
+		};
+	}
+	render() {
+	    return (
+		  	<Router>
+		    	<Navbar />
+		    	<br/>
+		    	<Route path="/" exact component={Home} />
+		    	<Route path="/login" render={(props) => <Login margin="40vh 0 0 12vw" width="20%" />}/>
+		    	<Route path="/register" component={Register} />
+		    	<Route path="/plan" component={Plan} />
+		    	<Route path="/timer" component={Timer} />
+		    	<Route path="/track" component={Track} />
+		      <Route path="/calendar" component={Calendar} />
+		    </Router>
+	    )
+	}
 }
-
-export default App;
