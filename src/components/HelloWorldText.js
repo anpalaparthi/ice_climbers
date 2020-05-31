@@ -8,19 +8,28 @@ export default class HelloWorldText extends Component {
         this.state = {
             username: '',
             password: '',
-            users: []
+            users: [],
+            user: {}
         }
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/home')
+        axios.get('http://localhost:5000/users/ravi')
             .then(response => {
-                if (response.data.length > 0) {
+                console.log(response.data)
+                if (response.data) {
+                    this.setState({
+                        user: response.data,
+                        username: response.data.username
+                    })
+                }
+
+                /*if (response.data.length > 0) {
                     this.setState({
                         users: response.data.map(user => user.username),
                         username: response.data[0].username
                     })
-                }
+                }*/
             })
     }
 
@@ -28,7 +37,8 @@ export default class HelloWorldText extends Component {
          return(
              <div>
                  <h1>Hello Ice Climberzzzzzzz</h1>
-                 <h2>{this.state.users}</h2>
+                 <h2>{this.state.user.password}</h2>
+                 {/*<h2>{this.state.users}</h2>*/}
              </div>
              // PLEASE TO DO
             //<text>Hello Ice Climbers</text>

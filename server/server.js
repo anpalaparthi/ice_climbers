@@ -8,8 +8,8 @@ const cors = require('cors')
 const port = process.env.PORT || 5000
 
 const homeRouter = require('./routes/home')
-// const loginRouter = require('./routes/login_signup')
-// const planRouter = require('./routes/planTest')
+const usersRouter = require('./routes/users')
+const planRouter = require('./routes/plans')
 // const trackRouter = require('./routes/trackPlan')
 // const timerRouter = require('./routes/timer')
 
@@ -25,8 +25,8 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/home', homeRouter)
-// app.use('/login_signup', loginRouter)
-// app.use('/planTest', planRouter)
+app.use('/users', usersRouter)
+app.use('/plans', planRouter)
 // app.use('/trackPlan', trackRouter)
 // app.use('/timer', timerRouter)
 
