@@ -8,6 +8,7 @@ import Login from "./components/login.component";
 import Plan from "./components/plan.component";
 import Timer from "./components/timer.component";
 import Track from "./components/track.component";
+import Calendar from "./components/calendar.component";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     	<Route path="/plan" component={Plan} />
     	<Route path="/timer" component={Timer} />
     	<Route path="/track" component={Track} />
+      <Route path="/calendar" component={Calendar} />
     </Router>
   );
 }

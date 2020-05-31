@@ -4,8 +4,15 @@ import '../index.css';
 
 export default class Home extends Component {
 	render() {
-		return(
-			<h1 className="welcomeText">Hi!</h1>
+		return (
+			<div className="welcomeText">
+				<h1>Hi!</h1>
+				<div className="welcomeBody">
+					<p>Welcome to Study Tracker.</p>
+					<p>Join the community of go-getters who want to
+					take control of their studying today!</p>
+				</div>
+			</div>
 		)
 	}
 }

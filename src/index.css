@@ -1,4 +1,15 @@
 .welcomeText {
-	display: flex;
-	font-family: Patua One;
+	margin: 10vh 0 0 28vw;
+}
+.welcomeText h1 {
+	font-family: Chelsea Market;
+	font-size: 3.75em;
+}
+.welcomeBody {
+	margin-left: -5vw;
+	width: 20vw;
+}
+.welcomeBody p {
+	font-family: Chelsea Market;
+	font-size: 1.25em;
 }
