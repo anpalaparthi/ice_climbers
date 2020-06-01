@@ -11,7 +11,7 @@ export default class Navbar extends Component {
 		                <Link to="/plan" className="nav-item nav-link tab">PLAN</Link>
 		                <Link to="/track" className="nav-item nav-link tab">TRACK</Link>
 		                <Link to="/" className="nav-item nav-link tab">HOME</Link>
-		                <Link to="/login" className="nav-item nav-link tab">LOGIN</Link>
+		                <Link to="/calendar" className="nav-item nav-link tab">CALENDAR</Link>
 		                <Link to="/timer" className="nav-item nav-link tab">TIMER</Link>
 		            </ul>
 		        </div>
