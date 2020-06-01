@@ -12,10 +12,12 @@ router.route('/').get((req, res) => {
 router.route('/').post((req, res) => {
     const username = req.body.username
     const password = req.body.password
+    const email = req.body.email
 
     const newUser = new User({
         username,
-        password
+        password,
+        email
     })
 
     newUser.save()
@@ -43,6 +45,7 @@ router.route('/:name').post((req, res) => {
         .then(user => {
             user.username = req.body.username
             user.password = req.body.password
+            user.email = req.body.email
 
             user.save()
                 .then(() => res.json('User updated!'))

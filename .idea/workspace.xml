@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="206329d3-2d29-4bfe-93c1-4fffa0884ad1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HelloWorldText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HelloWorldText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/register.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register.component.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +92,7 @@
       <workItem from="1590818807325" duration="4364000" />
       <workItem from="1590883268582" duration="19173000" />
       <workItem from="1590957555824" duration="13980000" />
-      <workItem from="1591041857304" duration="227000" />
+      <workItem from="1591041857304" duration="5263000" />
     </task>
     <servers />
   </component>
