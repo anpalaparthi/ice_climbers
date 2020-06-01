@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000
 const homeRouter = require('./routes/home')
 const usersRouter = require('./routes/users')
 const planRouter = require('./routes/plans')
-// const trackRouter = require('./routes/trackPlan')
+const resourceRouter = require('./routes/resources')
 // const timerRouter = require('./routes/timer')
 
 const mongoose = require('mongoose')
@@ -27,7 +27,7 @@ app.use(express.json())
 app.use('/home', homeRouter)
 app.use('/users', usersRouter)
 app.use('/plans', planRouter)
-// app.use('/trackPlan', trackRouter)
+app.use('/resources', resourceRouter)
 // app.use('/timer', timerRouter)
 
 app.listen(port, () => {

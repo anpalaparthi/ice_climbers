@@ -25,27 +25,21 @@ router.route('/').post((req, res) => {
 
 //get specific user
 router.route('/:name').get((req, res) => {
-    User.findOne({username: req.params.name},(err, course) => {
-        res.json(course)
-    })
+    User.findOne({username: req.params.name})
         .then(user => res.json(user))
         .catch(err => res.status(400).json('Error: ' + err))
 })
 
 //delete specific user
 router.route('/:name').delete((req, res) => {
-    User.findOne({username: req.params.name},(err, course) => {
-        res.json(course)
-    })
+    User.findOneAndDelete({username: req.params.name})
         .then(() => res.json('User Deleted.'))
         .catch(err => res.status(400).json('Error: ' + err))
 })
 
 //update user
 router.route('/:name').post((req, res) => {
-    User.findOne({username: req.params.name},(err, course) => {
-        res.json(course)
-    })
+    User.findOne({username: req.params.name})
         .then(user => {
             user.username = req.body.username
             user.password = req.body.password
