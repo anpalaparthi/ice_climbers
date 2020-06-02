@@ -45,32 +45,57 @@ export default class Register extends Component {
 		})
 	}
 
+	handleSubmit = () => {
+		const {password, confirmPass} = this.state
+		if (password !== confirmPass) {
+			alert("Passwords don't match")
+		} else {
+			const user = {
+				username: this.state.username,
+				password: this.state.password,
+				email: this.state.email
+			}
+
+			console.log(user)
+
+			axios.post('http://localhost:5000/users', user)
+				.then(res => console.log(res.data))
+
+			this.setState({
+				username: '',
+				password: '',
+				confirmPass: '',
+				email: ''
+			})
+		}
+	}
+
 	onSubmit(e) {
 		e.preventDefault()
+			const user = {
+				username: this.state.username,
+				password: this.state.password,
+				email: this.state.email
+			}
 
-		const user = {
-			username: this.state.username,
-			password: this.state.password,
-			email: this.state.email
+			console.log(user)
+
+			axios.post('http://localhost:5000/users', user)
+				.then(res => console.log(res.data))
+
+			this.setState({
+				username: '',
+				password: '',
+				confirmPass: '',
+				email: ''
+			})
 		}
 
-		console.log(user)
-
-		axios.post('http://localhost:5000/users', user)
-			.then(res => console.log(res.data))
-
-		this.setState({
-			username:'',
-			password:'',
-			confirmPass:'',
-			email: ''
-		})
-	}
 
 	render() {
 		return (
 			<div style={{ margin: "35vh 0 0 12vw", width: "20%" }}>
-				<form className="loginForm" id="loginForm" onSubmit={this.onSubmit}>
+				<form className="loginForm" id="loginForm" onSubmit={this.handleSubmit}>
 					<h1 style={{ fontFamily: "Chelsea Market", fontSize: "1.5em", textAlign: "center" }}>Register</h1>
 					<div class="form-group">
 						<label for="name">
