@@ -1,5 +1,6 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar.component";
@@ -14,10 +15,7 @@ import Register from "./components/register.component";
 export default class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			openLogin: true,
-			openRegister: false
-		};
+		this.state = {};
 	}
 	render() {
 	    return (
@@ -30,7 +28,7 @@ export default class App extends React.Component {
 		    	<Route path="/plan" component={Plan} />
 		    	<Route path="/timer" component={Timer} />
 		    	<Route path="/track" component={Track} />
-		      <Route path="/calendar" component={Calendar} />
+		        <Route path="/calendar" component={Calendar} />
 		    </Router>
 	    )
 	}
