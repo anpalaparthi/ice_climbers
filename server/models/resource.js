@@ -31,6 +31,11 @@ const resourceSchema = new Schema({
         type: Array,
         required: true
     },
+    chaptersDone: {
+        type: Array,
+        required: true,
+        default: [false]
+    },
     /*chapters: {
         type: Object,
         of: chapterSchema,
