@@ -1,0 +1,211 @@
+[{
+  "_id": {
+    "$oid": "5ed1a69bd6f71ca8145d7518"
+  },
+  "username": "bobby",
+  "password": "password",
+  "email": "bobby@aol.com",
+  "loginStatus": true,
+  "createdAt": {
+    "$date": "2020-06-05T01:32:04.481Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T01:32:04.481Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed1a69bd6f71ca8145d7519"
+  },
+  "username": "zazu",
+  "password": "password",
+  "email": "zazu@lionking.com",
+  "loginStatus": true,
+  "createdAt": {
+    "$date": "2020-06-05T01:51:29.944Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T01:51:29.944Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed1a69bd6f71ca8145d751a"
+  },
+  "username": "mufasa",
+  "password": "password",
+  "email": "mufasa@lionking.com",
+  "loginStatus": true,
+  "createdAt": {
+    "$date": "2020-06-05T01:54:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T01:54:06.790Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed1a69bd6f71ca8145d751b"
+  },
+  "username": "simba",
+  "password": "password",
+  "email": "simba@lionking.com",
+  "loginStatus": true,
+  "createdAt": {
+    "$date": "2020-06-05T02:00:07.420Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T02:00:07.420Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed1a69bd6f71ca8145d751c"
+  },
+  "username": "pumba",
+  "password": "password",
+  "email": "pumba@lionking.com",
+  "loginStatus": true,
+  "createdAt": {
+    "$date": "2020-06-05T02:01:55.609Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T02:01:55.609Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed2f6e7a1ec7fa350470feb"
+  },
+  "username": "lightning mcqueen",
+  "password": "password",
+  "email": "mcqueen@cars.com",
+  "createdAt": {
+    "$date": "2020-05-31T00:14:31.596Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T02:03:48.425Z"
+  },
+  "loginStatus": true
+},{
+  "_id": {
+    "$oid": "5ed2f863a1ec7fa350470fee"
+  },
+  "username": "doc hudson",
+  "password": "password",
+  "email": "doc@cars.com",
+  "createdAt": {
+    "$date": "2020-05-31T00:20:51.116Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-31T00:20:51.116Z"
+  },
+  "loginStatus": false
+},{
+  "_id": {
+    "$oid": "5ed2fa999af2ff50b00ed280"
+  },
+  "username": "mater",
+  "password": "password",
+  "email": "m8er@cars.com",
+  "createdAt": {
+    "$date": "2020-05-31T00:30:17.955Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-31T00:30:17.955Z"
+  },
+  "loginStatus": false
+},{
+  "_id": {
+    "$oid": "5ed2fda411272eb01c34ff8a"
+  },
+  "username": "sally",
+  "password": "password",
+  "email": "sally@cars.com",
+  "createdAt": {
+    "$date": "2020-05-31T00:43:16.585Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-31T00:43:49.757Z"
+  },
+  "loginStatus": false
+},{
+  "_id": {
+    "$oid": "5ed572aab061444e908a7090"
+  },
+  "username": "gabbar",
+  "password": "password",
+  "email": "gabbar@sholay.com",
+  "createdAt": {
+    "$date": "2020-06-01T21:27:06.706Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T01:38:04.130Z"
+  },
+  "loginStatus": true
+},{
+  "_id": {
+    "$oid": "5ed5eb1f8f92e5d42cc23f3e"
+  },
+  "username": "samba",
+  "password": "password",
+  "email": "samba@sholay.com",
+  "createdAt": {
+    "$date": "2020-06-02T06:01:03.124Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T02:08:50.919Z"
+  },
+  "loginStatus": true
+},{
+  "_id": {
+    "$oid": "5ed993650ee688a1f0e4d696"
+  },
+  "loginStatus": false,
+  "username": "veeru",
+  "password": "password",
+  "email": "veeru@sholay.com",
+  "createdAt": {
+    "$date": "2020-06-05T00:35:49.873Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T00:35:49.873Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed993fdc3d0ecbc28207bdd"
+  },
+  "loginStatus": true,
+  "username": "bob",
+  "password": "password",
+  "email": "bob@sholay.com",
+  "createdAt": {
+    "$date": "2020-06-05T00:38:21.849Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T02:04:34.940Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed99527c4bf0acdb038cde1"
+  },
+  "loginStatus": true,
+  "username": "joee",
+  "password": "password",
+  "email": "joee@sholay.com",
+  "createdAt": {
+    "$date": "2020-06-05T00:43:19.806Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T02:07:54.132Z"
+  }
+},{
+  "_id": {
+    "$oid": "5ed9a279ebf59e73a0f8b6f8"
+  },
+  "loginStatus": true,
+  "username": "pooh",
+  "password": "password",
+  "email": "pooh@100acres.com",
+  "createdAt": {
+    "$date": "2020-06-05T01:40:09.596Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-05T01:43:13.812Z"
+  }
+}]

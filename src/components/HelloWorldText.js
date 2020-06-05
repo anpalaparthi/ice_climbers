@@ -14,7 +14,7 @@ export default class HelloWorldText extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/users/ravi')
+        axios.get('http://localhost:5000/users/')
             .then(response => {
                 console.log(response.data)
                 if (response.data) {

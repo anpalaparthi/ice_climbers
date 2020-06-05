@@ -1,6 +1,8 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
+import resourceSchema from './resource'
 
+//chapters to plans
 const planSchema = new Schema({
     username: {
         type: String,
@@ -22,9 +24,17 @@ const planSchema = new Schema({
         type: Number,
         required: true,
         minValue: 1
-    }, resourceName: { //database id for resource model
+    }, resourceName: { //name for resource model
         type: String,
         required: true,
+    }, resource: {
+        type: resourceSchema,
+        required: true
+    },
+    speedMode: { //slow = 0, normal = 1, fast = 2
+        type: Number,
+        required: true,
+        default: 1
     }
 })
 

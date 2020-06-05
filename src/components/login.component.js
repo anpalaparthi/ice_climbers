@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+import axios from 'axios'
 import "../login.css";
+import { createBrowserHistory } from 'history';
+export const browserHistory = createBrowserHistory();
 
 export default class Login extends Component {
 	constructor(props) {
 		super(props);
-
-		this.onChangeUsername = this.onChangeUsername.bind(this)
-		this.onChangePassword = this.onChangePassword.bind(this)
-		this.onSubmit = this.onSubmit.bind(this)
-
 		this.state = {
-			loggedIn: false,
-			username: '',
-			password: '',
+			email:'',
+			password:''
 		}
+		this.onChangeEmail = this.onChangeEmail.bind(this)
+		this.onChangePassword = this.onChangePassword.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
-	onChangeUsername(e) {
+	onChangeEmail(e) {
 		this.setState({
-			username: e.target.value
+			email: e.target.value
 		})
 	}
 
@@ -30,61 +29,58 @@ export default class Login extends Component {
 		})
 	}
 
-	handleSubmit = () => {
+	handleSubmit(event) {
+		event.preventDefault()
+
 		const user = {
-			username: this.state.username,
+			email: this.state.email,
 			password: this.state.password
 		}
 
-		axios.post('http://localhost:5000/users', user)
-			.then(res => console.log(res.data))
-
-		this.setState({
-			username: '',
-			password: '',
-		})
+		axios.post('http://localhost:5000/users/login', user)
+			.then(response => {
+				console.log("res from login: ", response)
+				console.log("Login successful")
+				window.location = '/timer'
+			})
+			.catch(error => {
+				console.log("Error status: ", error)
+				alert("Error - Incorrect Username or Password" )
+			})
 	}
 
-	onSubmit(e) {
-		e.preventDefault()
-			const user = {
-				username: this.state.username,
-				password: this.state.password,
-			}
-
-			console.log(user)
-
-			axios.post('http://localhost:5000/users', user)
-				.then(res => console.log(res.data))
-
-			this.setState({
-				username: '',
-				password: ''
-			})
-		}
 	render() {
-		if(this.state.loggedIn) {
-			return (
-				<Redirect to={{ pathname: '/', state: {loggedIn: true}}} />
-			)
-		}
 		return (
 			<div style={{ margin: this.props.margin, width: this.props.width}}>
-				<form className="loginForm" id="loginForm">
+				<form className="loginForm" id="loginForm" onSubmit={this.handleSubmit}>
 					<h1 style={{ fontFamily: "Chelsea Market", fontSize: "1.5em", textAlign: "center" }}>Login</h1>
 					<div class="form-group">
-						<label className="loginLabel" htmlFor="username">
-						Username
-						<input type="text" class="form-control loginEmail" id="username" placeholder="Username" />
+						<label for="email">
+						Email
+						<input type="email"
+							   class="form-control loginEmail"
+							   id="email"
+							   placeholder="Email"
+							   value={this.state.email}
+							   onChange={this.onChangeEmail}/>
 						</label>
 					</div>
 					<div class="form-group">
-						<label className="loginLabel" htmlFor="password">
+						<label for="password">
 						Password
-						<input type="password" class="form-control loginPass" id="password" aria-describedby='passwordHelp' placeholder="Password" />
+						<input type="password"
+							   class="form-control loginPass"
+							   id="password"
+							   aria-describedby='passwordHelp'
+							   placeholder="Password"
+							   value={this.state.password}
+							   onChange={this.onChangePassword}/>
 						</label>
 					</div>
-					<input class="btn btn-primary loginSubmit" type="submit" value="Login"/>
+					<input class="btn btn-primary"
+						   type="submit"
+						   value="Login"
+							/>
 					<br/><br/>
 					<Link to="/register" className="registerLink">No account? Register here</Link>
 				</form>

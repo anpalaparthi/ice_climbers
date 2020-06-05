@@ -32,31 +32,27 @@ router.route('/').post((req, res) => {
 
 //get specific plan
 router.route('/:name/:resource').get((req, res) => {
-    Plan.findOne({resourceName: req.params.resource, username: req.params.name},(err, course) => {
-        res.json(course)
-    })
+    Plan.findOne({resourceName: req.params.resource, username: req.params.name})
         .then(plan => res.json(plan))
         .catch(err => {
-            return res.status(400).json('Error: ' + err)
+            console.log('in catch get specific')
+            res.status(400).json('Error: ' + err)
         })
 })
 
 //delete plan
 router.route('/:name/:resource').delete((req, res) => {
-    Plan.findOne({resourceName: req.params.resource, username: req.params.name},(err, course) => {
-        res.json(course)
-    })
+    Plan.findOneAndDelete({resourceName: req.params.resource, username: req.params.name})
         .then(() => res.json('Plan Deleted.'))
         .catch(err => {
-            return res.status(400).json('Error: ' + err)
+            console.log('in catch delete')
+            res.status(400).json('Error: ' + err)
         })
 })
 
 //update plan
 router.route('/:name/:resource').post((req, res) => {
-    Plan.findOne({resourceName: req.params.resource, username: req.params.name},(err, course) => {
-        res.json(course)
-    })
+    Plan.findOne({resourceName: req.params.resource, username: req.params.name})
         .then(plan => {
             plan.username = req.body.username
             plan.testType = req.body.testType
@@ -66,10 +62,14 @@ router.route('/:name/:resource').post((req, res) => {
 
             plan.save()
                 .then(() => res.json('Plan updated!'))
-                .catch(err => res.status(400).json('Error: ' + err))
+                .catch(err => {
+                    console.log('in catch for update save')
+                    res.status(400).json('Error: ' + err)
+                })
         })
         .catch(err => {
-            return res.status(400).json('Error: ' + err)
+            console.log('in catch update')
+            res.status(400).json('Error: ' + err)
         })
 })
 

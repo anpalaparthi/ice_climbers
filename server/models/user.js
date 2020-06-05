@@ -15,6 +15,15 @@ const userSchema = new Schema({
         unique: false,
         trim: true,
         minLength: 3
+    }, email: {
+        type: String,
+        required: true,
+        trim: true,
+        minLength: 3
+    }, loginStatus: {
+        type: Boolean,
+        required: true,
+        default: false
     }
     }, {
     timestamps: true,
