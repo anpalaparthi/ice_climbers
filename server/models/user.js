@@ -20,6 +20,10 @@ const userSchema = new Schema({
         required: true,
         trim: true,
         minLength: 3
+    }, loginStatus: {
+        type: Boolean,
+        required: true,
+        default: false
     }
     }, {
     timestamps: true,

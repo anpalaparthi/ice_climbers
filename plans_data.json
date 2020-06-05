@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "5ed351edf52fa7c0f0450b80"
+  },
+  "username": "zazu",
+  "testType": "ACT",
+  "testDate": {
+    "$date": "2020-06-14T01:38:50.451Z"
+  },
+  "timePerWeek": 456,
+  "resourceName": "my book ACT",
+  "createdOn": {
+    "$date": "2020-05-31T06:42:53.022Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ed357b6f9078f60486b7505"
+  },
+  "username": "bobby",
+  "testType": "ACT",
+  "testDate": {
+    "$date": "2020-06-14T01:38:50.451Z"
+  },
+  "timePerWeek": 90,
+  "resourceName": "Kaplan ACT",
+  "createdOn": {
+    "$date": "2020-05-31T07:07:34.621Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ed417687ceb2f95d0715593"
+  },
+  "username": "pumba",
+  "testType": "ACT",
+  "testDate": {
+    "$date": "2020-06-14T01:38:50.451Z"
+  },
+  "timePerWeek": 789,
+  "resourceName": "Barrons ACT",
+  "createdOn": {
+    "$date": "2020-05-31T20:45:28.243Z"
+  },
+  "__v": 0
+}]

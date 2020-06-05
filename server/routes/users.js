@@ -1,5 +1,15 @@
 const router = require('express').Router()
 let User = require('../models/user')
+const bcrypt = require('bcrypt')
+
+const passport = require('passport')
+
+const initializePassport = require('../passport-config')
+initializePassport(
+    passport,
+    email => User.findOne({email: email}),
+    id => User.findById()
+)
 
 //get all users
 router.route('/').get((req, res) => {
@@ -8,11 +18,31 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err))
 })
 
+//login route
+router.route('/login').post((req, res) => {
+    console.log("post")
+
+    User.findOne({email: req.body.email, password: req.body.password})
+        .then(user => {
+            console.log("email: " + user.email + " password: " + user.password + " username: " + user.username)
+            user.loginStatus = true
+            res.json(user.loginStatus)
+
+            user.save()
+                .then(() => res.json('User updated!'))
+                .catch(err => res.status(400).json('Error: ' + err))
+        })
+        .catch(err => res.status(401).json('Incorrect Username or Password. Error: ' + err))
+
+})
+
 //add new user
 router.route('/').post((req, res) => {
     const username = req.body.username
     const password = req.body.password
     const email = req.body.email
+
+    console.log("test console log")
 
     const newUser = new User({
         username,
@@ -22,7 +52,7 @@ router.route('/').post((req, res) => {
 
     newUser.save()
         .then(() => res.json('User added!'))
-        .catch(err => res.status(400).json('Error: ' + err))
+        .catch(err => res.status(400).json('Error3: ' + err))
 })
 
 //get specific user
