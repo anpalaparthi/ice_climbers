@@ -1,0 +1,63 @@
+.container {
+	display: flex;
+}
+.testDate {
+	padding: 3vh 0 0 22vw;
+}
+.chooseResource {
+	padding: 3vh 0 0 5vw;
+}
+.resultResources {
+	font-family: Montserrat;
+	font-size: 1.5em;
+	padding: 0.5vh 1vh 0 1vw;
+}
+.hoursMode {
+	padding: 3vh 0 0 5vw;
+}
+.title {
+	font-family: Chelsea Market;
+	font-size: 2.5em;
+	font-style: italic;
+	text-align: center;
+}
+.subHeader {
+	font-family: Chelsea Market;
+	font-size: 1.5em;
+}
+select[name="selectTest"] {
+	font-family: Montserrat;
+	font-size: 1em;
+	margin-top: 1.5vh;
+	height: 5vh;
+}
+.selectDate {
+	margin-top: 1.5vh;
+	height: 5vh;
+	font-family: Montserrat;
+}
+select[name="selectMode"] {
+	font-family: Montserrat;
+	font-size: 1em;
+}
+.planButtons {
+	margin: 5vh 0 0 37vw;
+}
+.submitPlan {
+	background-color: #F4A261;
+	border-style: none;
+	border-radius: 10px;
+	font-family: Chelsea Market;
+	height: 8vh;
+	transition-duration: 0.5s;
+}
+.submitPlan:hover {
+	background-color: #E76F51;
+}
+.congratsMessage {
+	padding-top: 3vh;
+}
+.taskLabel {
+	font-size: 1em;
+	font-family: Montserrat;
+}
