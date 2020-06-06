@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-import resourceSchema from './resource'
+let Resource = require('../models/resource')
 
 //chapters to plans
 const planSchema = new Schema({
@@ -24,13 +24,18 @@ const planSchema = new Schema({
         type: Number,
         required: true,
         minValue: 1
-    }, resourceName: { //name for resource model
-        type: String,
+    }, resourceName: {
+        type:String,
+        required: true
+    },
+    /*book: { //name for resource model
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Resource',
         required: true,
     }, resource: {
         type: resourceSchema,
         required: true
-    },
+    },*/
     speedMode: { //slow = 0, normal = 1, fast = 2
         type: Number,
         required: true,
