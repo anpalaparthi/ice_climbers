@@ -27,6 +27,25 @@ const planSchema = new Schema({
     }, resourceName: {
         type:String,
         required: true
+    }, chapterNames: {
+        type: Array,
+        required: true,
+        default: [""]
+    },
+    chapterTimes: { //in minutes
+        type: Array,
+        required: true,
+        default: [0]
+    },
+    chaptersDone: {
+        type: Array,
+        required: true,
+        default: [false]
+    },
+    chapterWeeks: {
+        type: Array,
+        required: true,
+        default: [0]
     },
     /*book: { //name for resource model
         type: mongoose.Schema.Types.ObjectId,

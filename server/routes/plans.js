@@ -11,30 +11,55 @@ router.route('/').get((req, res) => {
 
 //add new plan
 router.route('/').post((req, res) => {
-    const username = req.body.username
-    const testType = req.body.testType
-    const testDate = Date.parse(req.body.testDate)
-    const timePerWeek = Number(req.body.timePerWeek)
-    const resourceName = req.body.resourceName
-    const speedMode = req.body.speedMode
+    Resource.findOne({resourceName: req.body.resourceName})
+        .then(resource => {
+            const chapterNames = resource.chapterNames
+            console.log("chapterNames: " + chapterNames)
 
-    const newPlan = new Plan({
-        username,
-        testType,
-        testDate,
-        timePerWeek,
-        resourceName,
-        speedMode
-    })
+            const chapterTimes = resource.chapterTimes
+            console.log("chapterTimes: " + chapterTimes)
 
-    newPlan.save()
-        .then(() => res.json('Plan added!'))
-        .catch(err => res.status(400).json('Error: ' + err))
+            const chaptersDone = resource.chaptersDone
+            console.log("chaptersDone: " + chaptersDone)
+
+            const chapterWeeks = resource.chapterWeeks
+            console.log("chapterWeeks: " + chapterWeeks)
+
+            const username = req.body.username
+            const testType = req.body.testType
+            const testDate = Date.parse(req.body.testDate)
+            const timePerWeek = Number(req.body.timePerWeek)
+            const resourceName = req.body.resourceName
+            const speedMode = req.body.speedMode
+
+            console.log("chapterNames2: " + chapterNames)
+
+            const newPlan = new Plan({
+                username,
+                testType,
+                testDate,
+                timePerWeek,
+                resourceName,
+                chapterNames,
+                chapterTimes,
+                chaptersDone,
+                chapterWeeks,
+                speedMode
+            })
+
+            newPlan.save()
+                .then(() => res.json('Plan added!'))
+                .catch(err => res.status(400).json('Error: ' + err))
+        })
+        .catch(err => {
+            console.log('in catch add post')
+            res.status(400).json('Error: ' + err)
+        })
 })
 
 //get specific plan
-router.route('/:name/:resource').get((req, res) => {
-    Plan.findOne({resourceName: req.params.resource, username: req.params.name})
+router.route('/:name').get((req, res) => {
+    Plan.findOne({username: req.params.name})
         .then(plan => res.json(plan))
         .catch(err => {
             console.log('in catch get specific')
@@ -76,9 +101,9 @@ router.route('/:name/:resource').delete((req, res) => {
 })*/
 
 //update week numbers and times in plan
-router.route('/generate/:name').post((req, res) => {
+router.route('/generate').post((req, res) => {
     let speedFactor
-    Plan.findOne(/*"resource.resourceName": req.params.resource,*/ {username: req.params.name})
+    Plan.findOne({resourceName: req.body.resourceName, username: req.body.username})
         .then(plan => {
             if (plan.speedMode == 0) {
                 speedFactor = 1.5
@@ -87,17 +112,34 @@ router.route('/generate/:name').post((req, res) => {
             } else {
                 speedFactor = 1
             }
-            plan.book.chapterTimes = plan.book.chapterTimes.map(time => time*speedFactor)
-            let numChapters = plan.book.chapterNames.length
+            console.log(plan.chapterWeeks)
+            plan.chapterTimes = plan.chapterTimes.map(time => time*speedFactor)
+            let numChapters = plan.chapterNames.length
             let maxTime = plan.timePerWeek
             let timeSpent = 0
+            let weekNum = 1
 
-            for (i = 0; i <= numChapters; i++) {
-                while (timeSpent <= maxTime) {
-                    plan.book.chapterWeeks[i] = i + 1
-                    timeSpent += plan.book.chapterTimes[i]
+            for (i = 0; i < numChapters; i++) {
+                if (timeSpent > maxTime) {
+                    timeSpent = 0
+                    weekNum += 1
                 }
+                plan.chapterWeeks[i] = weekNum
+                timeSpent += plan.chapterTimes[i]
             }
+
+            console.log("chapterWeeks: " + plan.chapterWeeks)
+
+            plan.markModified('chapterWeeks')
+            plan.markModified('chapterTimes')
+
+            plan.save()
+                .then(() => res.json('Generate Plan!'))
+                .catch(err => res.status(400).json('Error: ' + err))
+        })
+        .catch(err => {
+            console.log('in catch generate post')
+            res.status(400).json('Error: ' + err)
         })
 })
 

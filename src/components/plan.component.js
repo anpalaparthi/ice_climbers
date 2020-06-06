@@ -65,7 +65,21 @@ export default class Plan extends Component {
 
 	onGeneratePlan() {
 		this.createPlan()
-		window.location = '/showPlan'
+
+		const generateBody = {
+			username: this.state.username,
+			resourceName: this.state.resourceName
+		}
+
+		console.log("generate body: "+ generateBody)
+
+		axios.post('http://localhost:5000/plans/generate/', generateBody)
+			.then(res => console.log(res.data))
+			.catch(error => {
+				console.log("Error status: ", error)
+			})
+
+		window.location = '/track'
 	}
 
 	onSelectTest(e) {
@@ -114,18 +128,7 @@ export default class Plan extends Component {
 
 		console.log("before get")
 
-		/*axios.get('http://localhost:5000/resources/Princeton-Cracking-the-SAT-2020')
-			.then(response => {
-				console.log("sdfgh console")
-				//console.log("res.data json.stringify: " + JSON.stringify(response.data))
-				this.state.resourceUsed = response.data
-			}, (error) => {
-				console.log("axios get error: ", error)
-				}
-			)*/
-
 		console.log("this.state.resourceName = ", this.state.resourceName)
-		//console.log("resource used: ", this.state.resourceUsed)
 
 		const plan = {
 			username: this.state.username,

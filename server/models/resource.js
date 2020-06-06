@@ -33,8 +33,11 @@ const resourceSchema = new Schema({
     chaptersDone: {
         type: Array,
         required: true,
-        default: [false]
     },
+    chapterWeeks: {
+        type: Array,
+        required: false
+    }
     /*chapters: {
         type: Object,
         of: chapterSchema,

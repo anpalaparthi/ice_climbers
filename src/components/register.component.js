@@ -61,6 +61,7 @@ export default class Register extends Component {
 			axios.post('http://localhost:5000/users', user)
 				.then(res => console.log(res.data))
 
+				alert("Welcome to Paddle! You're account is registered!")
 			this.setState({
 				username: '',
 				password: '',
@@ -141,7 +142,7 @@ export default class Register extends Component {
 							   onChange={this.onChangeConfPassword}/>
 						</label>
 					</div>
-					<input class="btn btn-primary loginSubmit" type="submit" value="Register"/>
+					<input class="btn btn-primary loginSubmit" type="submit" value="Register" onClick={this.onClick}/>
 					<br/><br/>
 					<Link to="/login" className="registerLink">Have an account? Login here</Link>
 				</form>
